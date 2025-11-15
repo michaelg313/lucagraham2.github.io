@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luca Graham — Simple Sites</title>
+  <meta name="description" content="Freelance web design and small-business sites by Luca Graham.">
+  <style>
+    /* minimal, responsive styling */
+    :root{--accent:#0b72ff;--bg:#f8fafc;--text:#0b1a2b;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.4}
+    .wrap{max-width:960px;margin:6vh auto;padding:28px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(11,23,43,0.06)}
+    h1{margin:8px 0 6px;font-size:clamp(26px,6vw,40px)}
+    p.lead{margin:0 0 18px;color:#334155}
+    .row{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+    .card{flex:1 1 320px;background:#fff;padding:22px;border-radius:12px;box-shadow:0 6px 20px rgba(11,23,43,0.06)}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .features{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+    .feature{background:#fff;padding:10px;border-radius:8px;box-shadow:0 4px 12px rgba(11,23,43,0.04)}
+    footer{margin-top:22px;text-align:center;color:#64748b;font-size:14px}
+    @media (max-width:640px){.wrap{margin:4vh 14px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">LG</div>
+      <div>
+        <div style="font-weight:700">Luca Graham</div>
+        <div style="font-size:13px;color:#64748b">Web design & small-business sites</div>
+      </div>
+    </header>
+
+    <section style="margin-top:18px">
+      <h1>Simple websites that get results</h1>
+      <p class="lead">I build fast, modern landing pages and one-page websites for freelancers and local businesses. Start with a clear message and one action.</p>
+
+      <div class="row" style="margin-top:16px">
+        <a class="cta" href="#contact">Get my free checklist →</a>
+
+        <div style="margin-left:auto;color:#475569;align-self:center">Or: <strong><a href="mailto:hello@lucagraham.com" style="color:var(--accent);text-decoration:none">Email me</a></strong></div>
+      </div>
+
+      <div style="margin-top:20px" class="features">
+        <div class="feature">Fast load times</div>
+        <div class="feature">Mobile-ready</div>
+        <div class="feature">SEO basics set</div>
+        <div class="feature">Easy updates</div>
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:22px">
+      <h3 style="margin-top:0">Contact / Request</h3>
+      <p style="margin:6px 0">Leave your email and I’ll send the checklist plus a quick quote.</p>
+      <!-- Simple form: to make it work you'll need a form handler service or server -->
+      <form action="https://formspree.io/f/{your-id}" method="POST">
+        <label style="display:block;margin-bottom:8px">
+          <input name="name" placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3" />
+        </label>
+        <label style="display:block;margin-bottom:8px">
+          <input name="email" type="email" placeholder="Email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3" />
+        </label>
+        <button type="submit" class="cta" style="border:none">Send me the checklist</button>
+      </form>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Luca Graham — <a href="#" style="color:var(--accent);text-decoration:none">Privacy</a>
+    </footer>
+  </main>
+
+  <script>document.getElementById('year').textContent=(new Date()).getFullYear();</script>
+</body>
+</html>
